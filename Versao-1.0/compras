@@ -1,0 +1,2 @@
+#!/bin/sh
+python3.6 ~/CarroDeCompras/Versao-1.0/main.py
