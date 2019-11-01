@@ -3,11 +3,11 @@
 # CarroDeCompras
     Um programa desenvolvido em python com interface gráfica similar aos programas dos caixas dos mercados.
 
-# +++++++++++++++++++++++++ Requisitos ++++++++++++++++++++++++++++
+# +++++++++ Requisitos +++++++++++
     python3.6 >
     Tkinter library
 
-# +++++++++++++++++++++++++ Instalação ++++++++++++++++++++++++++++
+# +++++++++ Instalação +++++++++++
     ! Após seguir estes passos, o programa será instalado em sua pasta de usuário (/home/'usuario').
     ! Verifique se está na pasta do usuário antes de seguir os passos. Caso contrário o programa apresentará problemas!.
     ! Caso queira instalar em outro diretório, basta editar os arquivos 'compra' e 'main.py' de acordo com o diretório escolhido.
@@ -37,7 +37,7 @@
         ! Certifique-se de mudar o 'your_username' para seu nome de usuário (ex : /home/joao/CarroDeCompras/..)
         e salve.
    
-# +++++++++++++++++++++++ Funções ++++++++++++++++++++++++++
+# +++++++ Funções +++++++++
     Adicionar itens (nome, valor, quantidade)
     Remover itens
     Calcular desconto
