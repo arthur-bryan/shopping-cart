@@ -10,7 +10,7 @@ PYTHON_VERSION = None
 
 if PLATFORM == 'linux':
     if os.getuid() != 0:
-        sys.stdout.write("[ ! ] Necessário privilégios de root (ou sudo)!")
+        sys.stdout.write(" [ ! ] Necessário privilégios de root (ou sudo)!\n")
         sys.exit(1)
     try:
         PYTHON_VERSION = float(input("Informe a versão do Python que deseja utilizar (3.6 ou mais recente): "))
@@ -34,7 +34,7 @@ if PLATFORM == 'linux':
 
     run_by_terminal = input(" [ ? ] Deseja chamar o programa pelo terminal?(S/N): ")
     if run_by_terminal.upper() == 'S':
-        command_name = input("[ ? ] Informe o nome desejado do comando para chamar o programa no terminal: ")
+        command_name = input(" [ ? ] Informe o nome desejado do comando para chamar o programa no terminal: ")
         if len(command_name.lower()) > 5:
             try:
                 with open('/usr/bin/{}', 'w'.format(command_name)) as file:
@@ -42,7 +42,7 @@ if PLATFORM == 'linux':
                     file.write("python{} {}\n".format(PYTHON_VERSION, APP_PATH))
                     file.close()
             except Exception as error:
-                sys.stdout.write(" [ ! ] Erro: {}".format(error))
+                sys.stdout.write(" [ ! ] Erro: {}\n".format(error))
             else:
                 sleep(0.5)
                 sys.stdout.write(" [ + ] Sucesso! Digite {} no terminal para abrir o programa.\n")
@@ -63,11 +63,11 @@ if PLATFORM == 'linux':
                 file.write("Categories = Utility;\n")
                 file.close()
         except Exception as error:
-            sys.stdout.write("Erro: {}".format(error))
+            sys.stdout.write("Erro: {}\n".format(error))
         else:
             sleep(0.5)
-            sys.stdout.write(" [+] Atalho criado com sucesso! Você pode encontrar o programa em seu menu.")
+            sys.stdout.write(" [+] Atalho criado com sucesso! Você pode encontrar o programa em seu menu.\n")
 
-    sys.stdout.write(" [ + ] Processo finalizado com sucesso!")
+    sys.stdout.write(" [ + ] Processo finalizado com sucesso!\n")
     sleep(2)
     sys.exit(0)
