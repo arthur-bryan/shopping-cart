@@ -18,7 +18,7 @@ if PLATFORM == 'linux':
         sys.stdout.write(" [ ! ] Informe uma versão válida! Ex: '3.7' ou '3.6'.")
         sys.exit(1)
     else:
-        with open('compras.sh' 'w') as file:
+        with open('compras.sh', 'w') as file:
             file.write("#!/bin/bash\n\n")
             file.write("python{} app.py\n".format(str(PYTHON_VERSION)))
             file.close()
