@@ -15,7 +15,7 @@ if PLATFORM == 'linux':
     try:
         PYTHON_VERSION = float(input("Informe a versão do Python que deseja utilizar (3.6 ou mais recente): "))
         if PYTHON_VERSION < 3.6:
-            sys.stdout.write(" [ ! ] Versão deve ser 3.6 ou mais recente!")
+            sys.stdout.write(" [ ! ] Versão deve ser 3.6 ou mais recente!\n")
             sys.exit(1)
     except ValueError:
         sys.stdout.write(" [ ! ] Informe uma versão válida! Ex: '3.7' ou '3.6'.")
