@@ -43,7 +43,7 @@ if PLATFORM == 'linux':
                 sys.stdout.write(" [ ! ] Erro: {}\n".format(error))
             else:
                 sleep(0.5)
-                sys.stdout.write(" [ + ] Sucesso! Digite {} no terminal para abrir o programa.\n")
+                sys.stdout.write(" [ + ] Sucesso! Digite {} no terminal para abrir o programa.\n".format(command_name))
         else:
             sys.stdout.write(" [ ! ] Nome do comando deve ter mais de 5 caracteres.\n")
             sys.exit(1)
