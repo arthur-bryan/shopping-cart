@@ -34,7 +34,7 @@
     
     - LINUX:
         $ cd ~ 
-        $ python3.6 uninstall.py
+        $ sudo python3.6 uninstall.py
         
         OBS: Substitua o '~' do primeiro comando pelo diretório no qual os arquivos estão armazenados.
            
