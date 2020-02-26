@@ -9,6 +9,9 @@ EXECUTABLE_FILE = os.path.join(os.getcwd(), 'compras.sh')
 PYTHON_VERSION = None
 
 if PLATFORM == 'linux':
+    if os.getuid() != 0:
+        sys.stdout.write("[ ! ] Necessário privilégios de root (ou sudo)!")
+        sys.exit(1)
     try:
         PYTHON_VERSION = float(input("Informe a versão do Python que deseja utilizar (3.6 ou mais recente): "))
         if PYTHON_VERSION < 3.6:
@@ -23,32 +26,31 @@ if PLATFORM == 'linux':
             file.write("python{} app.py\n".format(str(PYTHON_VERSION)))
             file.close()
     sleep(0.5)
-    sys.stdout.write(" [ + ] Instalando 'carro-de-compras'.")
+    sys.stdout.write(" [ + ] Instalando 'carro-de-compras'.\n")
     os.system("chmod +x compras.sh")
     sleep(0.5)
-    sys.stdout.write(" [+] Permissão de execução concedida à 'compras.sh'!")
+    sys.stdout.write(" [+] Permissão de execução concedida à 'compras.sh'!\n")
     sleep(0.5)
 
-    run_by_terminal = input("Deseja chamar o programa pelo terminal?(S/N): ")
+    run_by_terminal = input(" [ ? ] Deseja chamar o programa pelo terminal?(S/N): ")
     if run_by_terminal.upper() == 'S':
-        command_name = input("Informe o nome desejado do comando para chamar o programa no terminal: ")
+        command_name = input("[ ? ] Informe o nome desejado do comando para chamar o programa no terminal: ")
         if len(command_name.lower()) > 5:
             try:
-                sys.stdout.write(" [ ? ] Senha requerida!")
                 with open('/usr/bin/{}', 'w'.format(command_name)) as file:
                     file.write("#!/bin/sh\n")
                     file.write("python{} {}\n".format(PYTHON_VERSION, APP_PATH))
                     file.close()
             except Exception as error:
-                sys.stdout.write("Erro: {}".format(error))
+                sys.stdout.write(" [ ! ] Erro: {}".format(error))
             else:
                 sleep(0.5)
-                sys.stdout.write(" [ + ] Sucesso! Digite {} no terminal para abrir o programa.")
+                sys.stdout.write(" [ + ] Sucesso! Digite {} no terminal para abrir o programa.\n")
         else:
-            sys.stdout.write(" [ ! ] Nome do comando deve ter mais de 5 caracteres.")
+            sys.stdout.write(" [ ! ] Nome do comando deve ter mais de 5 caracteres.\n")
             sys.exit(1)
 
-    create_shortcut = input("Deseja adicionar o programa ao seu menu de aplicativos?(S/N): ")
+    create_shortcut = input(" [ ? ] Deseja adicionar o programa ao seu menu de aplicativos?(S/N): ")
     if create_shortcut.lower() == "S":
         try:
             with open('/usr/share/applications/carro-de-compras.desktop', 'w') as file:
