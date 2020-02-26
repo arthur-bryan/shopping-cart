@@ -35,7 +35,7 @@ if PLATFORM == 'linux':
         command_name = input(" [ ? ] Informe o nome desejado do comando para chamar o programa no terminal: ")
         if len(command_name.lower()) > 5:
             try:
-                with open("/usr/bin/{}", "w".format(command_name)) as file:
+                with open("/usr/bin/{}".format(command_name), "w") as file:
                     file.write("#!/bin/sh\n")
                     file.write("python{} {}\n".format(PYTHON_VERSION, APP_PATH))
                     file.close()
@@ -63,9 +63,10 @@ if PLATFORM == 'linux':
         except Exception as error:
             sys.stdout.write("Erro: {}\n".format(error))
         else:
+            sys.stdout.write(" [ + ] Criando atalho em /usr/share/applicaions/carro-de-compras.desktop...\n")
             sleep(0.5)
-            sys.stdout.write(" [+] Atalho criado com sucesso! Você pode encontrar o programa em seu menu.\n")
-
+            sys.stdout.write(" [ + ] Atalho criado com sucesso! Você pode encontrar o programa em seu menu.\n")
+    sleep(0.5)
     sys.stdout.write(" [ + ] Processo finalizado com sucesso!\n")
-    sleep(2)
+    sleep(1)
     sys.exit(0)
