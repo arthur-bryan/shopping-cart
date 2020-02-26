@@ -29,15 +29,13 @@ if PLATFORM == 'linux':
     sys.stdout.write(" [ + ] Instalando 'carro-de-compras'.\n")
     os.system("chmod +x compras.sh")
     sleep(0.5)
-    sys.stdout.write(" [+] Permissão de execução concedida à 'compras.sh'!\n")
-    sleep(0.5)
 
     run_by_terminal = input(" [ ? ] Deseja chamar o programa pelo terminal?(S/N): ")
     if run_by_terminal.upper() == 'S':
         command_name = input(" [ ? ] Informe o nome desejado do comando para chamar o programa no terminal: ")
         if len(command_name.lower()) > 5:
             try:
-                with open('/usr/bin/{}', 'w'.format(command_name)) as file:
+                with open("/usr/bin/{}", "w".format(command_name)) as file:
                     file.write("#!/bin/sh\n")
                     file.write("python{} {}\n".format(PYTHON_VERSION, APP_PATH))
                     file.close()
