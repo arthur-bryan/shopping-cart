@@ -16,7 +16,20 @@
         $ git clone https://www.github.com/arthur-bryan/carro-de-compras
         $ cd carro-de-compras
         $ sudo python3.6 install.py
-   
+        
+        OBS: Qualquer alteração no diretório 'carro-de-compras' poderá afetar o funcionamento do programa!
+             Seguindo estes passos, os arquivos serão armazenados no diretório home do usuário.
+             Subtitua o '~' do primeiro comando pelo diretório no qual você deseja armazená-los.
+
+# +++++++++ Desinstalação +++++++++
+    REMOVE TODOS OS ARQUIVOS UTILIZADOS PELO PROGRAMA.
+    
+    - LINUX:
+        $ cd ~ 
+        $ python3.6 uninstall.py
+        
+        OBS: Substitua o '~' do primeiro comando pelo diretório no qual os arquivos estão armazenados.
+           
 # +++++++ Funções +++++++++
     Adicionar itens (nome, valor, quantidade)
     Remover itens
