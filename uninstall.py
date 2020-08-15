@@ -13,7 +13,7 @@ def uninstall():
             sys.stdout.write(" [ - ] Removendo arquivos...\n")
             os.system('rm -r {}'.format(CURRENT_DIR))
             os.system('rm /usr/bin/compras')
-            os.system('apt remove --purge python3-tk')
+            os.system('apt remove --purge python3-tk -y')
         except Exception as error:
             print(error)
             sys.exit(1)
